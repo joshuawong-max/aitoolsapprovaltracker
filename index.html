@@ -516,7 +516,8 @@
 /* ══════════════════════════════════
    CLOUD DATA SYNC IMPLEMENTATION
 ══════════════════════════════════ */
-const DATABASE_URL = "https://script.google.com/macros/s/AKfycbxZJHKOuF9NvLw1OKnC8x26yERJLBcM0NQPKhLWRY74FKIdzI6G9CWBVfNITDC44d2I/exec";
+// PASTE YOUR FRESH COPIED DEPLOYMENT URL HERE:
+const DATABASE_URL = "YOUR_NEW_GOOGLE_SCRIPT_WEB_APP_URL_HERE";
 
 let tools = [];
 let editId = null, driveTarget = null;
@@ -528,38 +529,41 @@ function setSyncBadge(status, text) {
   badge.querySelector('span').textContent = text;
 }
 
-// Fetch database rows live from central Google Sheet
+// Fetch database rows live from central Google Sheet via CORS-safe endpoint
 async function fetchDatabase() {
   setSyncBadge('loading', 'Syncing...');
   try {
-    const res = await fetch(DATABASE_URL);
-    if (!res.ok) throw new Error('Network error');
+    // Append a timestamp to break cache loops
+    const res = await fetch(`${DATABASE_URL}?_cb=${Date.now()}`);
+    if (!res.ok) throw new Error('Network response failure');
     tools = await res.json();
     setSyncBadge('synced', 'Database Synced');
     render();
   } catch (err) {
-    console.error(err);
+    console.error('Fetch error:', err);
     setSyncBadge('error', 'Sync Failed');
   }
 }
 
-// Push local batch state upstream to write to the sheet
+// Push local state data cleanly inside a form-encoded wrapper
 async function persist() {
   setSyncBadge('loading', 'Saving...');
   try {
-    const res = await fetch(DATABASE_URL, {
+    // Send data as text/plain via no-cors mode to bypass pre-flight locks
+    await fetch(DATABASE_URL, {
       method: "POST",
-      mode: "no-cors", // Required to bypass browser CORS on Apps Script redirects
-      headers: { "Content-Type": "application/json" },
+      mode: "no-cors", 
+      headers: { "Content-Type": "text/plain" },
       body: JSON.stringify(tools)
     });
+    
     setSyncBadge('synced', 'Changes Saved');
-    // For no-cors requests we refresh the view state instantly
     render();
-    // Re-fetch cleanly after a short pause to ensure rows line up exactly
-    setTimeout(fetchDatabase, 1500);
+    
+    // Smooth delay before polling to let Google's sheet write buffer settle
+    setTimeout(fetchDatabase, 1800);
   } catch (err) {
-    console.error(err);
+    console.error('Persist error:', err);
     setSyncBadge('error', 'Save Failed');
   }
 }
