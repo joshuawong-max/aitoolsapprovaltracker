@@ -4,315 +4,368 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>A.I. Tools Approval Process — CCS</title>
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAPHklEQVR4nO1beZRUVXr/vnvfUvvW+8IujQhHWRQXjOAcUQjqCCJu4xjXcTATjZJJJuMyA3FmkCNGcaJjxBM07qCIIorLADqjKKKyN41A01t1dVdXdXVVvVfvvXu//FFdQY1JHKoaJjn9O6dOnzpd79X9fu/3rfcWwCAGMYhBDOL4AAEA8XivolRABDxKa9hxJIEVfYN+o0+s9nkq/boCkH+y/xMK/68KupUKv84lHbnPsUbRBBSWPfMEz+nDgoqX4f8ua4L8U8+YtlhwZuXcc0YGyiXRcVFC0QRIIgAAOLVa+97MBv90SQAc8Tv5djrn0Krt8XVLZ1a89hcjg+V5JRS7oj8NRRGAkH+aHo2jT4PwRQ2uhec1hKttSUAEwPEIGd+0S1..."/>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAPHklEQVR4nO1beZRUVXr/vnvfUvvW+8IujQhHWRQXjOAcUQjqCCJu4xjXcTATjZJJJuMyA3FmkCNGcaJjxBM07qCIIorLADqjKKKyN41A01t1dVdXdXVVvVfvvXu//FFdQY1JHKoaJjn9O6dOnzpd79X9fu/3rfcWwCAGMYhBDOL4AAEA8XivolRABDxKa9hxJIEVfYN+o0+s9nkq/boCkH+y/xMK/68KupUKv84lHbnPsUbRBBSWPfMEz+nDgoqX4f8ua4L8U8+YtlhwZuXcc0YGyiXRcVFC0QRIIgAAOLVa+97MBv90SQAc8Tv5djrn0Krt8XVLZ1a89hcjg+V5JRS7oj8NRRGAkH+aHo2jT4PwRQ2uhec1hKttSUAEwPEIGd+0S1JeKbui2ezuDnPt/eeXrRoadqt0jEkoTgH9Cw24FObVeLlpWfFF00L/vuCMijNCHo0JAhCUJ4P6P87ZEQMLdqZs6AmpTsWPTgvNo6IW9KdDKcVNJFFeDcTJtp3eGyd6H5g52rPj/WZj1cdtuS+aunOJ7oztWI4AIfPXcAQQBDB5iD84qUa9JJZxdp85RJtXHdBfjKZyAhGAjgEbRRFQWGAi64geU7YO8dDYHKDZa4i2iA71V47zLL78JK/stag9bsjm9rRo2hWzPv3ocHbPjo5MZkS5W7t/RvkTjBxhSxBBN6tvKNfD0VSumwGCgIFnoGgFcASwhYSNh8xVCyZ5HjUyolFhqAsJud6saEEE0JC0Oi8bN8LPT502xHfDTRP9xh9bc89WetlQP3fCGRt6EJAhEPg0dAHAkQAzwCiaAAn5YLZyW8+WybXaqvERPi1ryyQAAOeo5j+DQjqQtRHSlHOIMcCpNfxKm8DIOpDgDFQhyQZAyFoyBwDHRv9QgjRYWGcm59Cd62O/jpnQ4tIwFNBZDSJxIclGAIYMGENQOEcVEZWMA122A1mG+YfAGaiJnGz/ssdKAhyThw8AJSAAAAAhn+rGVOiBOh8bt6NLbHh2T+4XWQeTfherQvx6FiQJEilPSuG9wtGVMOFwR59jAxwzAZSGAIB8qpsz1n+RX8fa1xszLz6wOfpun8OSK3eYdx3uk7sVDi4AkHljweVSwEf975EBsxxKD/PDpL+bVvGXAMeuSSq+FMZ8UVPp1/nkGnVW0hQHd8fMzlFlLi3iwuGv7U1t8akQFFLmJIHkjPT2LDQ29dLHCoKLc3IJSTYSsowlY/NPdC26YEywtlBRDjRK1gxNqnVVRVw4LGtjb58pHK+GqsbBlbVJ9NrQ5ddZLUii6oA24cnP+x5c+oeeJR6dVzSn8XOvi1XpCvocSXbOkvHrJwZu0xT2n/XFQKJ4F+h31pOr9JNQklQY6X6dK60pYfg0VjO+Ui+/+534ffsS+IHgHJ/aZfxk/Z5Ey+wGzzmGwPSC1zrv/sf3kpfHcnAw5GZ1WZu6hwaV08ZUerwEcNQt9ndFCZqh/N8RIWWcJSirK+ibVO8Z1pOx5Eet5pOLzw0/pXLk859rvmPW062XLXq7/ZXZY8NDf3iK/+E3v8wu783m5Dv7eqPXvtyx4PctYqVfZ3UcBFS6wQsAgAOcD0rSDGkKh3KvMkzkJZycO9Z7g8IR7n8//ltLYu6l+VWbfzOz5ppbT49Me3xO/cJl54ff29cj3vndx4m1iAAqQ0hkLPn366NPvt9mP+3SlLJuA7IAAAPtBMUVQv0MeFREjwohAgBHUnZ0kJ115zlVs5b8Prr+2pc7Ll14dvmN3xvuukFXsCyVE4dXN+buffjD7hc6+2t+WxJwhiCkgMc/STxTE6weuztmpBGOtNsDhaLoLTQs1QFdeWZezXMcJEvbPBlQnZBH55Wv7jOXLtnUtdZyBIQ9Civ3qlrSEHZX2hIAAJzhfwl0QbfGqoOaa09HOnssGqKS1AH5TIDMzcB3sI+2p2yWzORE7Puj9TufnV/70Nzx4VG2RGrqMsyC8QAAon9uIL/ySmQtuacjneUMgMF3G6wUg5IoIOJV2XPzav4tpEJV1JT7NzSL5689Sf2lkaOYqoDPrfKybgP27+q2NzV2WdsPJqzWWMZJpUxpiTwHkHOkzNlCGg5RzhZf+57C/EAOgBqKIwAKEyEFn7us9pGIS9a5VRZ+44DzSFPc2rvwDN9TPRnRJAlsnUPQraKfMaYTIOUkGLZDaWDIBJEjJFm2Q+mMg33xjHPoUK9o3NFp7vysw2xvS5oOwJHqsJRuURKBITJYcWntXWPCbKrhUG/EzYct25K9uTtrJxZPCz4DJESfSVHAfMsLgIzlp+gK5BtKQEQOQIwBcI2jmzPUAZElcti+rcNau2p339otzakEQF4RpVJDCSpBACIJ3WnRnLRZVzzHOrI5p+uOKd5/dXPUrlgVO39nnN4Ne5UGvwaVjDEVgKQkIClREiAQIEgCIQltR6CZsSHea8q23qxoUcFh5w7j1y+fFVmz+ILayyNejZVyeFqCXiC/ksa4tSOsQ/WnUfttxpjam3UO3zstsGrGCb4JN62J3rfw7cTsL7phg6Iwf9ijjvTrrMalgI8D6QjAIB8QpSQSJIkQERlHDoDQZ1JnxnQ6Zo/Ubn9iTs3yUeVuvVR7CUXfgWE+lU2o8/qen1u57aGt6R+OLdcmTK3jV/aYorXSo455JOq8dN+m+IMH44Y1LOJSzxnhHXNypWtyXYA3hHWs0xXw6wrzq0zqKjKdgMhxRCYnIesIMBERGYLiCGn4NKzsNFnzja9Gb+4sweywaAIKgdCtcVx9ed0TtiRj0ebeny87P7KSgQO2w7J+Haod5LCuyXhw5WfJN1sSpl24PuJRmU/n3KNxJeJGd21Ai4wIqcNHl6kThof4pDIXG0FC5DIWxQlRSiIR1FndH6Lihdtfa38ESBYVD0riSYWg9LPpVbNumuhZce+m1IwDCSf66Oyy9+JpuxEIgHHgfp1XGw6kPmqzX1rflH5jS0ums890/tvlVwd05bR6T92MUZ5Zk2u0uToTejpHMSHBiniUUf/wXuLStxqTbRwRxFHKoEQE5N3g1CG+4COzK14VkqyrV8cuPKVar/3l9NDLKcM5KCQUqj/Vq0GEEFlHmvZuj9nvbmvPbd0eNVsP9JimKMzNv4Hx1V7PDyYG5543VPuRYck456DvScjNN73S/muS8qhbppLVWQgAjCE8PqfuZxMr2YXNfWz7FS+0/nj6SG/tvdMiT3GSkLFFNwOmApAgAlA5eNwqCzLG1IwN8QNJ+5OP2sw33282duzsMDJEeTIUBuD08zKjIVT906mhZV5FhiVxecPaznmNsaxxtKmxZATkmxmCmWNCdYvODT4rHTIbe+njG1/puHtEWHPdM73s5+MqlAuylhPLOZRmyDgiMClJFFzEpTC/xjGQFZBq7BGb3/3SePnNfam98YwlAfJdoy0JRlV49QcuKF82OoRn37MpOXf1juSXhe8/bgQA5Cs1jgxWzK27pyGIpwMH9UAStv7Nuuhd8Ywlr5lUNv6K8f47ar1wkuVQyrRlnwSyERlHAkYIkiQRY4AuBYOawgLRDOx9dV/m0ee3Jz9JZm2pcQRLEAyPuLXn59e8vXZvZsmvNna+UdhpOq4EFGQ4qd4X+N3s8nUp0z4c0HlNl8XbFm+M3/bhoVSPV1fwknGhseeNdM8bE+FnuzkEbCmylg1Zh8AgCcQQOSFIIikUDh6fplS2pWnXo1tTv1i3J9FScIkrJpSdOG24e9aP17Q+eNxd4AgJ+YD4t+dUnXvteNfSWFru9moQ0RTuX73X+NWjW+Ibeo185D+51us9tc7TcEqVNmVUWJlS5cUTOIJm2jKZc6gv32Mil5JsVQGfV+Xlqxpz/7RkU+x1RwhwqQxuOat2xsOb294+2rlByQkonPtRFQ6PXVJ7z/gITO81Maoi6H43q23PyJ0v7Mo+tGZXctdXU2DEq7ExFa7QWUPdE06vc104IoSnoZQyk6NuQpRIwARIu8zLG9YfEA/dtaFjpSMEjKjwuVriGdM5ymJgQLrtghxrg7qyYk7tyrAiyg2HegEANI5et8bKWvro0zf3Z59+qym97UDcsL56vUtTYEq9p/ziE30XnVWvXamiUPosinFkuhDSKPcpYx/7zFjwL3/s/BARgYooBQds3FAg4aRqr2f57MqnvSh8hkMJxlCVgoSmoNessUgyR9HPY866t/Zn39h8oK/DsL5eGE2o8/puPDX8V2fWqldnciIqCRyGxJBzzzWrO79/qMewiukOB3TeUkhN46p9nqUzyx+r0EV9n0lRhTM3AUgpSXCGqkeFCGNca0o4m5/env7t67sThwEAFIZQkPb8CWUNt53mf4iksHMO9JV5ldHLt6ZvWfFx17ajTYEAJdsa+3YIScAZwK5oOnvzmugNO3tgY8SrnkBEDvUbDwCQtiDWazgtQ/xw8uLpoVXLL66/tSqgc0cSKAyBIcCLn8f33bkhfpVEhSkMNEdIY2SInQAARbnAgBIAACBkPjO0Jk37ljUdi1buyP5U05Qyr4blQpCdlzQonKFqOZhOZO0DU2v5VSvm1D4+qtytFxSgMISPmvsS92zsuU5TlTAQkSzG8n4MOAGA+dE2Q4Cc7cCD73duvHVd1yWfxcQ6v0ep82pQJomcAhEKY3rSlC3Vmhi15IKKpUGPigT5s0YKA9i4v7frtf3GPwc9yvCmHtEIUNzu0TEhAKD/VBjkg+O21nTq5jVtDyzc0DNnSzu97NKUMq8KFUKSTQBSRXQlLdk+KgBTrp8cmUaUX2jhZNmru1Pv9eYw+sGh7F6A4lzguBzP/GbUnlTvD1w30X/1WfX6D7Km3SWA2QxBQSSesnnPlS+1XpcyHCpcVx3Q+GUnl01d/kHH5uM+UCkGDPPDlIIBc8ZHRvxkSmCZi0tXToE0AwJNVcpueb3r4i/a0+lClakpDAAYWI5T9FGiY+YC3wZJeeMZ5l+v7Ow5eOu6rqviOdaqqxgUkmzOiHs0pgEceVqWI8FyHAAo/ijNcSWggMKukMIQ9nRmjL9+vfPWPos6VQU8tgNmwnAMAAD6irmlku6fBQEFFPJ+c49hLd6cvN2nqdWxjGw8nLBMgK/7eqn2RkpyUrSUcPp3ij84kIpv7Qy+cihh7cxaDh1tv/9/Eqz/WNkZw0LhkeUeHeD/0y9LBvHd8W3H7AcxiEEMYhCDKB3+Awwch6T+LXc1AAAAAElFTkSuQmCC">
+
+<!-- Firebase SDK -->
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+import { getDatabase, ref, onValue, set, push, remove, update } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
+
+/* ═══════════════════════════════════════════════════════════
+   🔧 FIREBASE SETUP — Replace with YOUR project credentials
+   Steps:
+   1. Go to https://console.firebase.google.com
+   2. Create a project (free Spark plan is enough)
+   3. Add a Web App → copy the firebaseConfig object below
+   4. Go to Realtime Database → Create Database → Start in TEST mode
+   5. Paste your config here and push to GitHub
+═══════════════════════════════════════════════════════════ */
+const firebaseConfig = {
+  apiKey:            "AIzaSyBFONLIdGhpYffLde77hpWegals4Vu_L94",
+  authDomain:        "ai-tool-approval.firebaseapp.com",
+  databaseURL:       "https://ai-tool-approval-default-rtdb.asia-southeast1.firebasedatabase.app/",
+  projectId:         "ai-tool-approval",
+  storageBucket:     "ai-tool-approval.firebasestorage.app",
+  messagingSenderId: "959848241159",
+  appId:             "1:959848241159:web:051d1a3780114c373db2a2"
+};
+
+const app = initializeApp(firebaseConfig);
+const db  = getDatabase(app);
+const dbRef = ref(db, 'tools');
+
+/* ── Listen for real-time changes from ANY device ── */
+onValue(dbRef, (snapshot) => {
+  const data = snapshot.val();
+  window._tools = data ? Object.entries(data).map(([fbKey, val]) => ({ ...val, fbKey })) : [];
+  window._render();
+});
+
+/* ── Expose DB operations to global scope ── */
+window._fbSave = async (tool) => {
+  // New tool → push (generates unique key); edit → set at existing key
+  if (tool.fbKey) {
+    const { fbKey, ...rest } = tool;
+    await set(ref(db, 'tools/' + fbKey), rest);
+  } else {
+    await push(dbRef, tool);
+  }
+};
+window._fbDelete = async (fbKey) => {
+  await remove(ref(db, 'tools/' + fbKey));
+};
+window._fbPatch = async (fbKey, patch) => {
+  await update(ref(db, 'tools/' + fbKey), patch);
+};
+
+/* ── Signal that Firebase is ready ── */
+window._fbReady = true;
+document.getElementById('sync-badge').innerHTML = `<div class="dot"></div>Live · Syncing`;
+document.getElementById('sync-badge').classList.add('green');
+</script>
+
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f4f4f4;
-    color: #1a1a1a;
-    min-height: 100vh;
-    padding: 2rem 1rem;
-  }
-  body::before {
-    content: '';
-    position: fixed;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 520px; height: 520px;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAKXSURBVHja7NoxAQAAAMKg9U9tCy+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAMAA7AAASmEPNcAAAAASUVORK5CYII=');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    opacity: 0.06;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .container { max-width: 1360px; margin: 0 auto; position: relative; z-index: 1; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f4f4f4; color: #1a1a1a; min-height: 100vh; padding: 2rem 1rem;
+}
+body::before {
+  content: ''; position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%, -50%); width: 520px; height: 520px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAKXSURBVHja7NoxAQAAAMKg9U9tCy+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAMAA7AAASmEPNcAAAAASUVORK5CYII=');
+  background-repeat: no-repeat; background-size: contain; background-position: center;
+  opacity: 0.06; pointer-events: none; z-index: 0;
+}
+.container { max-width: 1360px; margin: 0 auto; position: relative; z-index: 1; }
 
-  /* ── HEADER ── */
-  .header {
-    background: #1a1a1a; border-radius: 14px;
-    padding: 1.4rem 1.75rem; margin-bottom: 1.25rem;
-    display: flex; align-items: center;
-    justify-content: space-between; flex-wrap: wrap; gap: 1rem;
-  }
-  .header-left { display: flex; align-items: center; gap: 14px; }
-  .header-icon {
-    width: 44px; height: 44px; background: #e8650a;
-    border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  }
-  .header-icon svg { color: #fff; }
-  .header h1 { font-size: 20px; font-weight: 600; color: #fff; letter-spacing: -0.2px; }
-  .header p  { font-size: 12px; color: #888; margin-top: 2px; }
-  .header-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-  
-  .live-badge {
-    display: flex; align-items: center; gap: 6px;
-    background: rgba(232,101,10,0.15); border: 0.5px solid rgba(232,101,10,0.4);
-    border-radius: 20px; padding: 5px 13px;
-    font-size: 12px; color: #f07830; white-space: nowrap;
-  }
-  .live-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #e8650a; animation: pulse 2s infinite; }
-  
-  .sync-badge {
-    display: flex; align-items: center; gap: 6px;
-    background: rgba(16,185,129,0.15); border: 0.5px solid rgba(16,185,129,0.4);
-    border-radius: 20px; padding: 5px 13px;
-    font-size: 12px; color: #10b981; white-space: nowrap;
-  }
-  .sync-badge.loading {
-    background: rgba(245,158,11,0.15); border-color: rgba(245,158,11,0.4);
-    color: #f59e0b;
-  }
-  .sync-badge.loading .dot { background: #f59e0b; animation: pulse 1s infinite; }
-  .sync-badge.error {
-    background: rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.4);
-    color: #ef4444;
-  }
-  .sync-badge.error .dot { background: #ef4444; }
-  .sync-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #10b981; }
+/* ── HEADER ── */
+.header {
+  background: #1a1a1a; border-radius: 14px; padding: 1.4rem 1.75rem;
+  margin-bottom: 1.25rem; display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+}
+.header-left { display: flex; align-items: center; gap: 14px; }
+.header-icon {
+  width: 44px; height: 44px; background: #e8650a; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.header-icon svg { color: #fff; }
+.header h1 { font-size: 20px; font-weight: 600; color: #fff; letter-spacing: -0.2px; }
+.header p  { font-size: 12px; color: #888; margin-top: 2px; }
+.header-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+/* Live sync badge */
+.live-badge {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(232,101,10,0.15); border: 0.5px solid rgba(232,101,10,0.4);
+  border-radius: 20px; padding: 5px 13px; font-size: 12px; color: #f07830; white-space: nowrap;
+  transition: all 0.3s;
+}
+.live-badge.green {
+  background: rgba(16,185,129,0.12); border-color: rgba(16,185,129,0.35); color: #047857;
+}
+.live-badge .dot {
+  width: 7px; height: 7px; border-radius: 50%; background: #e8650a; animation: pulse 2s infinite;
+}
+.live-badge.green .dot { background: #10b981; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
 
-  /* ── STATUS STRIP ── */
-  .status-strip { display: grid; grid-template-columns: repeat(5,1fr); gap: 10px; margin-bottom: 1.25rem; }
-  .stat-card {
-    background: #fff; border: 0.5px solid #e2e2e2;
-    border-radius: 10px; padding: 14px 16px; border-top: 3px solid #e8650a;
-  }
-  .stat-card.propose  { border-top-color: #7c3aed; }
-  .stat-card.ai       { border-top-color: #e8650a; }
-  .stat-card.finance  { border-top-color: #f59e0b; }
-  .stat-card.approved { border-top-color: #10b981; }
-  .stat-card.total    { border-top-color: #0ea5e9; }
-  .stat-label { font-size: 10px; color: #aaa; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 6px; }
-  .stat-value { font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1; }
-  .stat-card.approved .stat-value { color: #10b981; }
-  .stat-card.total .stat-value { font-size: 16px; color: #0ea5e9; }
-  .stat-sub { font-size: 10px; color: #bbb; margin-top: 4px; }
+/* Connected users indicator */
+.users-badge {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(79,142,247,0.1); border: 0.5px solid rgba(79,142,247,0.3);
+  border-radius: 20px; padding: 5px 13px; font-size: 12px; color: #3b82f6; white-space: nowrap;
+}
 
-  /* ── TOOLBAR ── */
-  .toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 1.1rem; flex-wrap: wrap; }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 7px;
-    background: #e8650a; color: #fff; border: none;
-    border-radius: 8px; padding: 9px 18px;
-    font-size: 13px; font-weight: 500; cursor: pointer; transition: background 0.14s;
-  }
-  .btn-primary:hover { background: #c9510a; }
-  .filter-pills { display: flex; gap: 6px; flex-wrap: wrap; }
-  .filter-pill {
-    display: inline-flex; align-items: center; gap: 5px;
-    padding: 5px 13px; border-radius: 20px;
-    border: 0.5px solid #e0e0e0; background: #fff;
-    font-size: 12px; color: #666; cursor: pointer; transition: all 0.14s;
-  }
-  .filter-pill:hover { border-color: #e8650a; color: #e8650a; }
-  .filter-pill.active { background: #1a1a1a; border-color: #1a1a1a; color: #fff; }
-  .spacer { flex: 1; }
-  .view-toggle { display: flex; border: 0.5px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
-  .view-btn {
-    display: flex; align-items: center; gap: 5px;
-    padding: 7px 13px; background: #fff; border: none;
-    font-size: 12px; color: #888; cursor: pointer; transition: all 0.14s;
-  }
-  .view-btn:first-child { border-right: 0.5px solid #e0e0e0; }
-  .view-btn.active { background: #e8650a; color: #fff; }
-  .view-btn:hover:not(.active) { background: #fafafa; color: #1a1a1a; }
+/* Setup warning banner */
+.setup-banner {
+  background: #fff8ed; border: 1px solid #f5c49a; border-radius: 10px;
+  padding: 14px 18px; margin-bottom: 1.25rem; display: flex; gap: 12px; align-items: flex-start;
+}
+.setup-banner.hidden { display: none; }
+.setup-banner-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.setup-banner h3 { font-size: 13px; font-weight: 600; color: #92400e; margin-bottom: 4px; }
+.setup-banner p  { font-size: 12px; color: #a05c00; line-height: 1.6; }
+.setup-banner code {
+  background: #fde8c9; border-radius: 3px; padding: 1px 5px;
+  font-family: 'Consolas',monospace; font-size: 11.5px; color: #7c2d12;
+}
+.setup-banner a { color: #e8650a; }
 
-  /* ── TABLE VIEW ── */
-  .table-wrap { background: #fff; border: 0.5px solid #e2e2e2; border-radius: 10px; overflow: hidden; }
-  table { width: 100%; border-collapse: collapse; min-width: 1100px; }
-  .tbl-scroll { overflow-x: auto; }
-  thead th {
-    padding: 10px 14px; text-align: left;
-    font-size: 10px; font-weight: 600; color: #aaa;
-    text-transform: uppercase; letter-spacing: 0.6px;
-    background: #fafafa; border-bottom: 0.5px solid #ebebeb; white-space: nowrap;
-  }
-  thead th:first-child { padding-left: 18px; }
-  tbody tr { border-bottom: 0.5px solid #f4f4f4; transition: background 0.12s; }
-  tbody tr:last-child { border-bottom: none; }
-  tbody tr:hover { background: #fffbf8; }
-  tbody td { padding: 10px 14px; font-size: 12.5px; color: #555; vertical-align: middle; }
-  tbody td:first-child { padding-left: 18px; font-weight: 600; color: #1a1a1a; }
-  .tool-cell { display: flex; align-items: center; gap: 9px; }
-  .tool-avatar {
-    width: 32px; height: 32px; border-radius: 8px;
-    background: #fff4ee; border: 0.5px solid #f5b992;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 15px; flex-shrink: 0;
-  }
+/* ── STATUS STRIP ── */
+.status-strip { display: grid; grid-template-columns: repeat(5,1fr); gap: 10px; margin-bottom: 1.25rem; }
+.stat-card {
+  background: #fff; border: 0.5px solid #e2e2e2; border-radius: 10px;
+  padding: 14px 16px; border-top: 3px solid #e8650a;
+}
+.stat-card.propose  { border-top-color: #7c3aed; }
+.stat-card.ai       { border-top-color: #e8650a; }
+.stat-card.finance  { border-top-color: #f59e0b; }
+.stat-card.approved { border-top-color: #10b981; }
+.stat-card.total    { border-top-color: #0ea5e9; }
+.stat-label { font-size: 10px; color: #aaa; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 6px; }
+.stat-value { font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1; }
+.stat-card.approved .stat-value { color: #10b981; }
+.stat-card.total .stat-value { font-size: 16px; color: #0ea5e9; }
+.stat-sub { font-size: 10px; color: #bbb; margin-top: 4px; }
 
-  /* ── CARD VIEW ── */
-  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px,1fr)); gap: 14px; }
-  .tool-card {
-    background: #fff; border: 0.5px solid #e2e2e2;
-    border-radius: 12px; overflow: hidden; transition: box-shadow 0.16s, transform 0.16s;
-  }
-  .tool-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.09); transform: translateY(-2px); }
-  .card-head { display: flex; align-items: flex-start; gap: 12px; padding: 16px 18px 12px; border-bottom: 0.5px solid #f0f0f0; }
-  .card-avatar {
-    width: 42px; height: 42px; border-radius: 10px;
-    background: #fff4ee; border: 0.5px solid #f5b992;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px; flex-shrink: 0;
-  }
-  .card-meta { flex: 1; min-width: 0; }
-  .card-name { font-size: 14px; font-weight: 600; color: #1a1a1a; }
-  .card-by   { font-size: 11px; color: #aaa; margin-top: 2px; }
-  .card-cost { font-size: 13px; font-weight: 700; color: #e8650a; margin-top: 4px; }
-  .card-body { padding: 12px 18px; font-size: 12px; color: #777; line-height: 1.55; }
-  .card-apv  { display: flex; gap: 6px; flex-wrap: wrap; padding: 0 18px 14px; }
-  .card-foot { padding: 0 18px 14px; display: flex; align-items: center; justify-content: space-between; }
+/* ── TOOLBAR ── */
+.toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 1.1rem; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: #e8650a; color: #fff; border: none; border-radius: 8px;
+  padding: 9px 18px; font-size: 13px; font-weight: 500; cursor: pointer; transition: background 0.14s;
+}
+.btn-primary:hover { background: #c9510a; }
+.btn-primary:disabled { background: #ccc; cursor: not-allowed; }
+.filter-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+.filter-pill {
+  display: inline-flex; align-items: center; gap: 5px; padding: 5px 13px;
+  border-radius: 20px; border: 0.5px solid #e0e0e0; background: #fff;
+  font-size: 12px; color: #666; cursor: pointer; transition: all 0.14s;
+}
+.filter-pill:hover { border-color: #e8650a; color: #e8650a; }
+.filter-pill.active { background: #1a1a1a; border-color: #1a1a1a; color: #fff; }
+.spacer { flex: 1; }
+.view-toggle { display: flex; border: 0.5px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+.view-btn {
+  display: flex; align-items: center; gap: 5px; padding: 7px 13px;
+  background: #fff; border: none; font-size: 12px; color: #888; cursor: pointer; transition: all 0.14s;
+}
+.view-btn:first-child { border-right: 0.5px solid #e0e0e0; }
+.view-btn.active { background: #e8650a; color: #fff; }
+.view-btn:hover:not(.active) { background: #fafafa; color: #1a1a1a; }
 
-  /* ── BADGES ── */
-  .badge {
-    display: inline-flex; align-items: center; gap: 5px;
-    padding: 3px 9px; border-radius: 20px;
-    font-size: 10.5px; font-weight: 600; white-space: nowrap;
-  }
-  .badge::before { content:''; width:6px; height:6px; border-radius:50%; }
-  .badge-propose  { background:rgba(124,58,237,.12); color:#7c3aed; border:0.5px solid rgba(124,58,237,.3); }
-  .badge-propose::before  { background:#7c3aed; }
-  .badge-ai       { background:rgba(232,101,10,.12); color:#c9510a; border:0.5px solid rgba(232,101,10,.3); animation:pulse 2s infinite; }
-  .badge-ai::before       { background:#e8650a; }
-  .badge-finance  { background:rgba(245,158,11,.12); color:#b45309; border:0.5px solid rgba(245,158,11,.3); animation:pulse 2s infinite .4s; }
-  .badge-finance::before  { background:#f59e0b; }
-  .badge-approved { background:rgba(16,185,129,.12); color:#047857; border:0.5px solid rgba(16,185,129,.3); animation:none; }
-  .badge-approved::before { background:#10b981; }
-  .badge-rejected { background:rgba(239,68,68,.12); color:#dc2626; border:0.5px solid rgba(239,68,68,.3); animation:none; }
-  .badge-rejected::before { background:#ef4444; }
+/* ── TABLE VIEW ── */
+.table-wrap { background: #fff; border: 0.5px solid #e2e2e2; border-radius: 10px; overflow: hidden; }
+table { width: 100%; border-collapse: collapse; min-width: 1100px; }
+.tbl-scroll { overflow-x: auto; }
+thead th {
+  padding: 10px 14px; text-align: left; font-size: 10px; font-weight: 600; color: #aaa;
+  text-transform: uppercase; letter-spacing: 0.6px; background: #fafafa;
+  border-bottom: 0.5px solid #ebebeb; white-space: nowrap;
+}
+thead th:first-child { padding-left: 18px; }
+tbody tr { border-bottom: 0.5px solid #f4f4f4; transition: background 0.12s; }
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: #fffbf8; }
+tbody td { padding: 10px 14px; font-size: 12.5px; color: #555; vertical-align: middle; }
+tbody td:first-child { padding-left: 18px; font-weight: 600; color: #1a1a1a; }
+.tool-cell { display: flex; align-items: center; gap: 9px; }
+.tool-avatar {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: #fff4ee; border: 0.5px solid #f5b992;
+  display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0;
+}
 
-  /* ── APV MINI ── */
-  .apv-done    { display:inline-flex; align-items:center; gap:4px; padding:2px 8px; border-radius:5px; font-size:10px; font-weight:600; background:#eafaf3; color:#047857; border:0.5px solid #9dd8bc; }
-  .apv-reject  { display:inline-flex; align-items:center; gap:4px; padding:2px 8px; border-radius:5px; font-size:10px; font-weight:600; background:#fef2f2; color:#dc2626; border:0.5px solid #fca5a5; }
-  .apv-pending { display:inline-flex; align-items:center; gap:4px; padding:2px 8px; border-radius:5px; font-size:10px; color:#999; border:0.5px solid #e5e5e5; background:#fafafa; }
-  .mini-btn {
-    display:inline-flex; align-items:center; gap:4px;
-    padding:3px 9px; border-radius:5px; font-size:10px; font-weight:600;
-    cursor:pointer; border:none; transition:all 0.12s;
-  }
-  .mini-ap  { background:rgba(16,185,129,.12); color:#047857; }
-  .mini-ap:hover  { background:rgba(16,185,129,.25); }
-  .mini-rj  { background:rgba(239,68,68,.12); color:#dc2626; }
-  .mini-rj:hover  { background:rgba(239,68,68,.25); }
-  .mini-rs  { background:#f0f0f0; color:#888; }
-  .mini-rs:hover  { background:#e0e0e0; }
-  .mini-lk  { background:rgba(232,101,10,.1); color:#e8650a; }
-  .mini-lk:hover  { background:rgba(232,101,10,.2); }
-  .drive-link { font-size:10px; color:#e8650a; text-decoration:none; }
-  .drive-link:hover { text-decoration:underline; }
-  .apv-cell  { display:flex; flex-direction:column; gap:4px; }
-  .apv-acts  { display:flex; gap:4px; flex-wrap:wrap; }
+/* ── CARD VIEW ── */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px,1fr)); gap: 14px; }
+.tool-card {
+  background: #fff; border: 0.5px solid #e2e2e2; border-radius: 12px; overflow: hidden;
+  transition: box-shadow 0.16s, transform 0.16s;
+}
+.tool-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.09); transform: translateY(-2px); }
+.card-head {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 16px 18px 12px; border-bottom: 0.5px solid #f0f0f0;
+}
+.card-avatar {
+  width: 42px; height: 42px; border-radius: 10px;
+  background: #fff4ee; border: 0.5px solid #f5b992;
+  display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
+}
+.card-meta { flex: 1; min-width: 0; }
+.card-name { font-size: 14px; font-weight: 600; color: #1a1a1a; }
+.card-by   { font-size: 11px; color: #aaa; margin-top: 2px; }
+.card-cost { font-size: 13px; font-weight: 700; color: #e8650a; margin-top: 4px; }
+.card-body { padding: 12px 18px; font-size: 12px; color: #777; line-height: 1.55; }
+.card-apv  { display: flex; gap: 6px; flex-wrap: wrap; padding: 0 18px 14px; }
+.card-foot { padding: 0 18px 14px; display: flex; align-items: center; justify-content: space-between; }
 
-  .mono { font-family:'Consolas','Courier New',monospace; font-size:11.5px; }
+/* ── BADGES ── */
+.badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 9px; border-radius: 20px; font-size: 10.5px; font-weight: 600; white-space: nowrap;
+}
+.badge::before { content:''; width:6px; height:6px; border-radius:50%; }
+.badge-propose  { background:rgba(124,58,237,.12); color:#7c3aed; border:0.5px solid rgba(124,58,237,.3); }
+.badge-propose::before  { background:#7c3aed; }
+.badge-ai       { background:rgba(232,101,10,.12); color:#c9510a; border:0.5px solid rgba(232,101,10,.3); animation:pulse 2s infinite; }
+.badge-ai::before       { background:#e8650a; }
+.badge-finance  { background:rgba(245,158,11,.12); color:#b45309; border:0.5px solid rgba(245,158,11,.3); animation:pulse 2s infinite .4s; }
+.badge-finance::before  { background:#f59e0b; }
+.badge-approved { background:rgba(16,185,129,.12); color:#047857; border:0.5px solid rgba(16,185,129,.3); animation:none; }
+.badge-approved::before { background:#10b981; }
+.badge-rejected { background:rgba(239,68,68,.12); color:#dc2626; border:0.5px solid rgba(239,68,68,.3); animation:none; }
+.badge-rejected::before { background:#ef4444; }
 
-  /* ── BTN GHOST / DANGER ── */
-  .btn-ghost {
-    display:inline-flex; align-items:center; gap:6px;
-    background:#fff; border:0.5px solid #e0e0e0;
-    border-radius:7px; padding:8px 16px;
-    font-size:13px; color:#666; cursor:pointer; transition:all 0.13s;
-  }
-  .btn-ghost:hover { border-color:#e8650a; color:#e8650a; }
-  .btn-sm { padding:4px 10px; font-size:11px; }
-  .btn-danger {
-    display:inline-flex; align-items:center; gap:6px;
-    background:rgba(239,68,68,.1); color:#dc2626;
-    border:0.5px solid rgba(239,68,68,.3); border-radius:7px;
-    padding:8px 16px; font-size:13px; cursor:pointer; transition:all 0.13s;
-  }
-  .btn-danger:hover { background:rgba(239,68,68,.2); }
+/* ── APPROVAL MINI ── */
+.apv-done    { display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:5px;font-size:10px;font-weight:600;background:#eafaf3;color:#047857;border:0.5px solid #9dd8bc; }
+.apv-reject  { display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:5px;font-size:10px;font-weight:600;background:#fef2f2;color:#dc2626;border:0.5px solid #fca5a5; }
+.apv-pending { display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:5px;font-size:10px;color:#999;border:0.5px solid #e5e5e5;background:#fafafa; }
+.mini-btn    { display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:5px;font-size:10px;font-weight:600;cursor:pointer;border:none;transition:all 0.12s; }
+.mini-ap     { background:rgba(16,185,129,.12);color:#047857; }
+.mini-ap:hover { background:rgba(16,185,129,.25); }
+.mini-rj     { background:rgba(239,68,68,.12);color:#dc2626; }
+.mini-rj:hover { background:rgba(239,68,68,.25); }
+.mini-rs     { background:#f0f0f0;color:#888; }
+.mini-rs:hover { background:#e0e0e0; }
+.mini-lk     { background:rgba(232,101,10,.1);color:#e8650a; }
+.mini-lk:hover { background:rgba(232,101,10,.2); }
+.drive-link  { font-size:10px;color:#e8650a;text-decoration:none; }
+.drive-link:hover { text-decoration:underline; }
+.apv-cell    { display:flex;flex-direction:column;gap:4px; }
+.apv-acts    { display:flex;gap:4px;flex-wrap:wrap; }
 
-  .empty { text-align:center; padding:3rem 1rem; color:#bbb; font-size:14px; }
+/* "Updated by" timestamp */
+.updated-by { font-size:9.5px;color:#bbb;font-family:'Consolas',monospace;margin-top:2px; }
 
-  /* ── MODALS ── */
-  .overlay {
-    position:fixed; inset:0; background:rgba(0,0,0,0.45);
-    z-index:1000; display:flex; align-items:center; justify-content:center;
-    padding:20px; backdrop-filter:blur(3px);
-    opacity:0; pointer-events:none; transition:opacity 0.18s;
-  }
-  .overlay.open { opacity:1; pointer-events:all; }
-  .modal {
-    background:#fff; border-radius:14px; border:0.5px solid #e0e0e0;
-    width:100%; max-width:620px; max-height:90vh; overflow-y:auto;
-    transform:translateY(12px); transition:transform 0.18s;
-  }
-  .overlay.open .modal { transform:translateY(0); }
-  .modal-head {
-    padding:20px 22px 16px; border-bottom:0.5px solid #ebebeb;
-    display:flex; align-items:center; justify-content:space-between;
-  }
-  .modal-head h2 { font-size:16px; font-weight:600; color:#1a1a1a; }
-  .modal-close {
-    width:30px; height:30px; border-radius:7px;
-    background:#f4f4f4; border:0.5px solid #e0e0e0;
-    color:#999; cursor:pointer; display:flex; align-items:center; justify-content:center;
-    font-size:14px; transition:all 0.12s;
-  }
-  .modal-close:hover { background:#e8650a; color:#fff; border-color:#e8650a; }
-  .modal-body { padding:20px 22px; }
-  .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-  .form-group { display:flex; flex-direction:column; gap:5px; }
-  .form-group.full { grid-column:1/-1; }
-  label { font-size:10.5px; font-weight:600; color:#aaa; text-transform:uppercase; letter-spacing:0.5px; }
-  input, textarea, select {
-    background:#fafafa; border:0.5px solid #e0e0e0;
-    border-radius:7px; padding:9px 11px;
-    color:#1a1a1a; font-family:inherit; font-size:13px;
-    outline:none; width:100%; transition:border-color 0.14s;
-  }
-  input:focus, textarea:focus, select:focus { border-color:#e8650a; box-shadow:0 0 0 2px rgba(232,101,10,.1); }
-  select option { background:#fff; }
-  textarea { resize:vertical; min-height:64px; }
-  .calc-box {
-    background:#fff4ee; border:0.5px solid #f5b992;
-    border-radius:7px; padding:11px 13px;
-    display:flex; align-items:center; justify-content:space-between;
-  }
-  .calc-box .cl { font-size:10px; color:#a04800; }
-  .calc-box .cv { font-size:17px; font-weight:700; color:#e8650a; }
-  .sep { border:none; border-top:0.5px solid #ebebeb; margin:14px 0; }
-  .section-lbl { font-size:10.5px; font-weight:600; color:#aaa; text-transform:uppercase; letter-spacing:.5px; margin-bottom:10px; }
-  .modal-foot {
-    padding:14px 22px; border-top:0.5px solid #ebebeb;
-    display:flex; justify-content:flex-end; gap:10px;
-  }
+.mono { font-family:'Consolas','Courier New',monospace;font-size:11.5px; }
+.btn-ghost {
+  display:inline-flex;align-items:center;gap:6px;background:#fff;border:0.5px solid #e0e0e0;
+  border-radius:7px;padding:8px 16px;font-size:13px;color:#666;cursor:pointer;transition:all 0.13s;
+}
+.btn-ghost:hover { border-color:#e8650a;color:#e8650a; }
+.btn-sm { padding:4px 10px;font-size:11px; }
+.btn-danger {
+  display:inline-flex;align-items:center;gap:6px;background:rgba(239,68,68,.1);color:#dc2626;
+  border:0.5px solid rgba(239,68,68,.3);border-radius:7px;padding:8px 16px;font-size:13px;cursor:pointer;transition:all 0.13s;
+}
+.btn-danger:hover { background:rgba(239,68,68,.2); }
 
-  /* ── CONFIRM ── */
-  .confirm-box {
-    background:#fff; border-radius:12px; padding:24px;
-    width:320px; text-align:center; border:0.5px solid #e0e0e0;
-    transform:translateY(12px); transition:transform 0.18s;
-  }
-  .overlay.open .confirm-box { transform:translateY(0); }
-  .confirm-box h3 { font-size:15px; color:#1a1a1a; margin-bottom:6px; }
-  .confirm-box p  { font-size:12.5px; color:#888; margin-bottom:18px; }
-  .confirm-btns  { display:flex; gap:10px; justify-content:center; }
+.empty { text-align:center;padding:3rem 1rem;color:#bbb;font-size:14px; }
 
-  /* ── FOOTER ── */
-  .footer {
-    margin-top:1.75rem; padding-top:1rem;
-    border-top:0.5px solid #e0e0e0;
-    font-size:12px; color:#bbb;
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px;
-  }
-  .footer strong { color:#e8650a; font-weight:600; }
+/* ── SPINNER overlay for saving ── */
+.saving-toast {
+  position:fixed;bottom:24px;right:24px;z-index:9999;
+  background:#1a1a1a;color:#fff;border-radius:10px;
+  padding:10px 18px;font-size:13px;display:flex;align-items:center;gap:10px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.25);
+  opacity:0;pointer-events:none;transition:opacity 0.2s;
+}
+.saving-toast.show { opacity:1; }
+.saving-toast .spin {
+  width:14px;height:14px;border:2px solid rgba(255,255,255,0.3);
+  border-top-color:#fff;border-radius:50%;animation:spin 0.7s linear infinite;
+}
+@keyframes spin { to{transform:rotate(360deg)} }
 
-  @media(max-width:700px) {
-    .status-strip { grid-template-columns:repeat(2,1fr); }
-    .form-grid { grid-template-columns:1fr; }
-    .form-group.full { grid-column:1; }
-  }
-  @media(max-width:480px) { .status-strip { grid-template-columns:1fr; } }
+/* ── MODALS ── */
+.overlay {
+  position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1000;
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity 0.18s;
+}
+.overlay.open { opacity:1;pointer-events:all; }
+.modal {
+  background:#fff;border-radius:14px;border:0.5px solid #e0e0e0;
+  width:100%;max-width:620px;max-height:90vh;overflow-y:auto;
+  transform:translateY(12px);transition:transform 0.18s;
+}
+.overlay.open .modal { transform:translateY(0); }
+.modal-head {
+  padding:20px 22px 16px;border-bottom:0.5px solid #ebebeb;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.modal-head h2 { font-size:16px;font-weight:600;color:#1a1a1a; }
+.modal-close {
+  width:30px;height:30px;border-radius:7px;background:#f4f4f4;border:0.5px solid #e0e0e0;
+  color:#999;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-size:14px;transition:all 0.12s;
+}
+.modal-close:hover { background:#e8650a;color:#fff;border-color:#e8650a; }
+.modal-body { padding:20px 22px; }
+.form-grid { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
+.form-group { display:flex;flex-direction:column;gap:5px; }
+.form-group.full { grid-column:1/-1; }
+label { font-size:10.5px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:0.5px; }
+input, textarea, select {
+  background:#fafafa;border:0.5px solid #e0e0e0;border-radius:7px;padding:9px 11px;
+  color:#1a1a1a;font-family:inherit;font-size:13px;outline:none;width:100%;transition:border-color 0.14s;
+}
+input:focus, textarea:focus, select:focus { border-color:#e8650a;box-shadow:0 0 0 2px rgba(232,101,10,.1); }
+select option { background:#fff; }
+textarea { resize:vertical;min-height:64px; }
+.calc-box {
+  background:#fff4ee;border:0.5px solid #f5b992;border-radius:7px;padding:11px 13px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.calc-box .cl { font-size:10px;color:#a04800; }
+.calc-box .cv { font-size:17px;font-weight:700;color:#e8650a; }
+.sep { border:none;border-top:0.5px solid #ebebeb;margin:14px 0; }
+.section-lbl { font-size:10.5px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px; }
+.modal-foot { padding:14px 22px;border-top:0.5px solid #ebebeb;display:flex;justify-content:flex-end;gap:10px; }
+
+/* ── CONFIRM ── */
+.confirm-box {
+  background:#fff;border-radius:12px;padding:24px;width:320px;text-align:center;
+  border:0.5px solid #e0e0e0;transform:translateY(12px);transition:transform 0.18s;
+}
+.overlay.open .confirm-box { transform:translateY(0); }
+.confirm-box h3 { font-size:15px;color:#1a1a1a;margin-bottom:6px; }
+.confirm-box p  { font-size:12.5px;color:#888;margin-bottom:18px; }
+.confirm-btns  { display:flex;gap:10px;justify-content:center; }
+
+/* ── FOOTER ── */
+.footer {
+  margin-top:1.75rem;padding-top:1rem;border-top:0.5px solid #e0e0e0;
+  font-size:12px;color:#bbb;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;
+}
+.footer strong { color:#e8650a;font-weight:600; }
+
+@media(max-width:700px){
+  .status-strip{grid-template-columns:repeat(2,1fr);}
+  .form-grid{grid-template-columns:1fr;}
+  .form-group.full{grid-column:1;}
+}
+@media(max-width:480px){ .status-strip{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
 <div class="container">
 
+  <!-- Header -->
   <div class="header">
     <div class="header-left">
       <div class="header-icon">
@@ -324,41 +377,57 @@
       </div>
     </div>
     <div class="header-actions">
-      <div class="sync-badge" id="sync-status"><div class="dot"></div><span>Connecting...</span></div>
-      <div class="live-badge"><div class="dot"></div>Live Tracker</div>
+      <div class="live-badge" id="sync-badge"><div class="dot"></div>Connecting…</div>
     </div>
   </div>
 
+  <!-- Setup Banner (hidden once Firebase config is filled in) -->
+  <div class="setup-banner" id="setup-banner">
+    <div class="setup-banner-icon">⚙️</div>
+    <div>
+      <h3>One-time Firebase Setup Required for Real-time Sync</h3>
+      <p>
+        This tracker uses <strong>Firebase Realtime Database</strong> (free) so every device sees changes instantly.<br>
+        1. Go to <a href="https://console.firebase.google.com" target="_blank">console.firebase.google.com</a> → Create project (free Spark plan) → Add Web App.<br>
+        2. Copy your <code>firebaseConfig</code> into the <code>&lt;script type="module"&gt;</code> block at the top of this file.<br>
+        3. In Firebase Console → Realtime Database → Create Database → choose <strong>Test mode</strong> (allows read/write).<br>
+        4. Commit &amp; push to GitHub. Done — all users share live data automatically.
+      </p>
+    </div>
+  </div>
+
+  <!-- Status Strip -->
   <div class="status-strip">
     <div class="stat-card propose">
       <div class="stat-label">To Propose</div>
-      <div class="stat-value" id="cnt-propose">0</div>
+      <div class="stat-value" id="cnt-propose">—</div>
       <div class="stat-sub">Awaiting A.I. meeting</div>
     </div>
     <div class="stat-card ai">
       <div class="stat-label">Under A.I. Approval</div>
-      <div class="stat-value" id="cnt-ai">0</div>
+      <div class="stat-value" id="cnt-ai">—</div>
       <div class="stat-sub">Proposed, pending vote</div>
     </div>
     <div class="stat-card finance">
       <div class="stat-label">Finance Approval</div>
-      <div class="stat-value" id="cnt-fin">0</div>
+      <div class="stat-value" id="cnt-fin">—</div>
       <div class="stat-sub">A.I. approved, pending</div>
     </div>
     <div class="stat-card approved">
       <div class="stat-label">Fully Approved</div>
-      <div class="stat-value" id="cnt-approved">0</div>
+      <div class="stat-value" id="cnt-approved">—</div>
       <div class="stat-sub">All approvals granted</div>
     </div>
     <div class="stat-card total">
       <div class="stat-label">Total Monthly (Approved)</div>
-      <div class="stat-value" id="cnt-total">RM 0.00</div>
+      <div class="stat-value" id="cnt-total">RM —</div>
       <div class="stat-sub">Fully approved tools only</div>
     </div>
   </div>
 
+  <!-- Toolbar -->
   <div class="toolbar">
-    <button class="btn-primary" onclick="openAdd()">
+    <button class="btn-primary" id="add-btn" onclick="openAdd()">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
       Add New Tool
     </button>
@@ -383,6 +452,7 @@
     </div>
   </div>
 
+  <!-- List View -->
   <div id="list-view">
     <div class="table-wrap">
       <div class="tbl-scroll">
@@ -399,22 +469,34 @@
           </thead>
           <tbody id="tbl-body"></tbody>
         </table>
-        <div class="empty" id="tbl-empty" style="display:none;">No tools found. Click <strong>Add New Tool</strong> to get started.</div>
+        <div class="empty" id="tbl-empty" style="display:none;">
+          No tools found. Click <strong>Add New Tool</strong> to get started.
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- Card View -->
   <div id="card-view" style="display:none;">
     <div class="card-grid" id="card-grid"></div>
-    <div class="empty" id="card-empty" style="display:none;">No tools found. Click <strong>Add New Tool</strong> to get started.</div>
+    <div class="empty" id="card-empty" style="display:none;">
+      No tools found. Click <strong>Add New Tool</strong> to get started.
+    </div>
   </div>
 
   <div class="footer">
-    <span><strong>CCS A.I. Tools Approval Process</strong></span>
+    <span><strong>CCS A.I. Tools Approval Process</strong> — Real-time · Firebase</span>
     <span id="footerDate"></span>
   </div>
 </div>
 
+<!-- Saving toast -->
+<div class="saving-toast" id="saving-toast">
+  <div class="spin"></div>
+  <span id="toast-msg">Saving…</span>
+</div>
+
+<!-- ADD / EDIT MODAL -->
 <div class="overlay" id="add-overlay">
   <div class="modal">
     <div class="modal-head">
@@ -456,9 +538,9 @@
           <input id="f-seats" type="number" placeholder="Number of users" min="1" step="1" oninput="calcTotal()"/>
         </div>
         <div class="form-group">
-          <label>⑦ Total Cost / Month (RM) — ③×④×⑤×⑥</label>
+          <label>⑦ Total Cost / Month (RM) — auto</label>
           <div class="calc-box">
-            <span class="cl">Auto-calculated</span>
+            <span class="cl">③ × ④ × ⑤ × ⑥</span>
             <span class="cv" id="f-calc">RM 0.00</span>
           </div>
         </div>
@@ -479,11 +561,12 @@
     </div>
     <div class="modal-foot">
       <button class="btn-ghost" onclick="closeAdd()">Cancel</button>
-      <button class="btn-primary" onclick="saveTool()">Save Tool</button>
+      <button class="btn-primary" onclick="saveTool()">Save &amp; Sync</button>
     </div>
   </div>
 </div>
 
+<!-- DRIVE QUICK-EDIT -->
 <div class="overlay" id="drive-overlay">
   <div class="modal" style="max-width:420px;">
     <div class="modal-head">
@@ -499,11 +582,12 @@
     </div>
     <div class="modal-foot">
       <button class="btn-ghost" onclick="closeDrive()">Cancel</button>
-      <button class="btn-primary" onclick="saveDrive()">Save Link</button>
+      <button class="btn-primary" onclick="saveDrive()">Save &amp; Sync</button>
     </div>
   </div>
 </div>
 
+<!-- CONFIRM DIALOG -->
 <div class="overlay" id="confirm-overlay">
   <div class="confirm-box">
     <h3 id="cfm-title">Confirm Action</h3>
@@ -516,112 +600,68 @@
 </div>
 
 <script>
-/* ══════════════════════════════════
-   CLOUD DATA SYNC IMPLEMENTATION
-══════════════════════════════════ */
-// PASTE YOUR LATEST GOOGLE MACROS WEB APP URL HERE:
-const DATABASE_URL = "https://script.google.com/macros/s/AKfycbxZJHKOuF9NvLw1OKnC8x26yERJLBcM0NQPKhLWRY74FKIdzI6G9CWBVfNITDC44d2I/exec";
+/* ════════════════════════════════════════════════
+   APP STATE  (populated by Firebase onValue)
+════════════════════════════════════════════════ */
+window._tools = [];
+let editFbKey = null;
+let driveTarget = null;
+let currentFilter = 'all';
+let currentView = 'list';
 
-let tools = [];
-let editId = null, driveTarget = null;
-let currentFilter = 'all', currentView = 'list';
-
-function setSyncBadge(status, text) {
-  const badge = document.getElementById('sync-status');
-  badge.className = "sync-badge " + (status === 'loading' ? 'loading' : (status === 'error' ? 'error' : ''));
-  badge.querySelector('span').textContent = text;
-}
-
-// Fetch database rows cleanly using a dynamic JSONP callback injection script
-function fetchDatabase() {
-  setSyncBadge('loading', 'Syncing...');
-  
-  const oldScript = document.getElementById('jsonp-read-script');
-  if (oldScript) oldScript.remove();
-
-  const callbackName = 'googleSheetsReadCallback_' + Math.floor(Math.random() * 100000);
-  
-  window[callbackName] = function(data) {
-    tools = data || [];
-    setSyncBadge('synced', 'Database Synced');
-    render();
-    delete window[callbackName];
-    script.remove();
-  };
-
-  const script = document.createElement('script');
-  script.id = 'jsonp-read-script';
-  script.src = `${DATABASE_URL}?action=read&callback=${callbackName}&_cb=${Date.now()}`;
-  script.onerror = function() {
-    setSyncBadge('error', 'Sync Failed');
-  };
-  document.head.appendChild(script);
-}
-
-// Push local state metrics upstream via JSONP execution blocks
-function persist() {
-  setSyncBadge('loading', 'Saving...');
-  
-  const oldScript = document.getElementById('jsonp-save-script');
-  if (oldScript) oldScript.remove();
-
-  const callbackName = 'googleSheetsSaveCallback_' + Math.floor(Math.random() * 100000);
-  
-  window[callbackName] = function(response) {
-    if (response && response.status === 'success') {
-      setSyncBadge('synced', 'Changes Saved');
-      // Trigger background read refresh post-save sequence to verify integrity
-      setTimeout(fetchDatabase, 500);
-    } else {
-      setSyncBadge('error', 'Save Error');
-    }
-    delete window[callbackName];
-    script.remove();
-  };
-
-  const encodedData = encodeURIComponent(JSON.stringify(tools));
-  const script = document.createElement('script');
-  script.id = 'jsonp-save-script';
-  script.src = `${DATABASE_URL}?action=save&data=${encodedData}&callback=${callbackName}`;
-  script.onerror = function() {
-    setSyncBadge('error', 'Network Error');
-  };
-  document.head.appendChild(script);
-}
-
-function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2,5); }
-
+/* ── Status helpers ── */
 function getStatus(t) {
   if (t.proposed===false||t.aiApproved===false||t.finApproved===false) return 'rejected';
-  if (t.proposed===true&&t.aiApproved===true&&t.finApproved===true) return 'approved';
-  if (t.proposed===true&&t.aiApproved===true) return 'finance';
-  if (t.proposed===true) return 'ai';
+  if (t.proposed===true&&t.aiApproved===true&&t.finApproved===true)    return 'approved';
+  if (t.proposed===true&&t.aiApproved===true)                          return 'finance';
+  if (t.proposed===true)                                                return 'ai';
   return 'propose';
 }
 const S_LABEL = {propose:'To Propose',ai:'Under A.I. Approval',finance:'Finance Approval',approved:'Approved',rejected:'Rejected'};
 const S_CLASS = {propose:'badge-propose',ai:'badge-ai',finance:'badge-finance',approved:'badge-approved',rejected:'badge-rejected'};
 
+/* ── Hide setup banner once Firebase config is pasted ── */
+function checkSetup() {
+  // If databaseURL still has REPLACE, keep banner visible
+  const scripts = document.querySelectorAll('script[type="module"]');
+  // Just check the badge — if it turned green, Firebase connected → hide banner
+  if (document.getElementById('sync-badge').classList.contains('green')) {
+    document.getElementById('setup-banner').classList.add('hidden');
+  }
+}
+setInterval(checkSetup, 1000);
+
 /* ── Dashboard ── */
-function updateDash() {
+function updateDash(list) {
   const c={propose:0,ai:0,finance:0,approved:0,rejected:0}; let tot=0;
-  tools.forEach(t=>{const s=getStatus(t);c[s]=(c[s]||0)+1;if(s==='approved')tot+=Number(t.totalCost||0);});
-  document.getElementById('cnt-propose').textContent=c.propose;
-  document.getElementById('cnt-ai').textContent=c.ai;
-  document.getElementById('cnt-fin').textContent=c.finance;
-  document.getElementById('cnt-approved').textContent=c.approved;
-  document.getElementById('cnt-total').textContent='RM '+tot.toFixed(2);
+  list.forEach(t=>{const s=getStatus(t);c[s]=(c[s]||0)+1;if(s==='approved')tot+=Number(t.totalCost||0);});
+  document.getElementById('cnt-propose').textContent  = c.propose;
+  document.getElementById('cnt-ai').textContent       = c.ai;
+  document.getElementById('cnt-fin').textContent      = c.finance;
+  document.getElementById('cnt-approved').textContent = c.approved;
+  document.getElementById('cnt-total').textContent    = 'RM '+tot.toFixed(2);
 }
 
-/* ── Render List ── */
+/* ── Master render (called by Firebase listener) ── */
+window._render = function() {
+  const all = window._tools;
+  updateDash(all);
+  const list = all.filter(t => currentFilter==='all' || getStatus(t)===currentFilter);
+  if (currentView==='list') renderList(list);
+  else renderCards(list);
+};
+
+/* ── List ── */
 function renderList(list) {
-  const tbody=document.getElementById('tbl-body'),empty=document.getElementById('tbl-empty');
-  if(!list.length){tbody.innerHTML='';empty.style.display='block';return;}
+  const tbody=document.getElementById('tbl-body'), empty=document.getElementById('tbl-empty');
+  if (!list.length) { tbody.innerHTML=''; empty.style.display='block'; return; }
   empty.style.display='none';
-  tbody.innerHTML=list.map((t,i)=>{
+  tbody.innerHTML = list.map((t,i) => {
     const s=getStatus(t);
-    return`<tr>
+    const ts = t.updatedAt ? `<div class="updated-by">✎ ${t.updatedBy||'—'} · ${fmt(t.updatedAt)}</div>` : '';
+    return `<tr>
       <td class="mono" style="color:#bbb">${i+1}</td>
-      <td><div class="tool-cell"><div class="tool-avatar">🤖</div><span>${esc(t.name||'—')}</span></div></td>
+      <td><div class="tool-cell"><div class="tool-avatar">🤖</div><div><span>${esc(t.name||'—')}</span>${ts}</div></div></td>
       <td>${esc(t.mentionedBy||'—')}</td>
       <td class="mono">${t.priceFx?Number(t.priceFx).toFixed(2):'—'}</td>
       <td class="mono">${esc(t.currency||'—')}</td>
@@ -636,28 +676,30 @@ function renderList(list) {
       <td>${apvCell(t,'finApproved',s)}</td>
       <td>
         <div style="display:flex;gap:5px;">
-          <button class="btn-ghost btn-sm" onclick="openEdit('${t.id}')">Edit</button>
-          <button class="btn-danger btn-sm" onclick="confirmDel('${t.id}')">Del</button>
+          <button class="btn-ghost btn-sm" onclick="openEdit('${t.fbKey}')">Edit</button>
+          <button class="btn-danger btn-sm" onclick="confirmDel('${t.fbKey}')">Del</button>
         </div>
       </td>
     </tr>`;
   }).join('');
 }
 
-/* ── Render Cards ── */
+/* ── Cards ── */
 function renderCards(list) {
-  const grid=document.getElementById('card-grid'),empty=document.getElementById('card-empty');
-  if(!list.length){grid.innerHTML='';empty.style.display='block';return;}
+  const grid=document.getElementById('card-grid'), empty=document.getElementById('card-empty');
+  if (!list.length) { grid.innerHTML=''; empty.style.display='block'; return; }
   empty.style.display='none';
-  grid.innerHTML=list.map(t=>{
+  grid.innerHTML = list.map(t => {
     const s=getStatus(t);
-    return`<div class="tool-card">
+    const ts = t.updatedAt ? `<div style="font-size:9.5px;color:#bbb;font-family:Consolas,monospace;margin-top:3px;">✎ ${t.updatedBy||'—'} · ${fmt(t.updatedAt)}</div>` : '';
+    return `<div class="tool-card">
       <div class="card-head">
         <div class="card-avatar">🤖</div>
         <div class="card-meta">
           <div class="card-name">${esc(t.name||'Unnamed')}</div>
           <div class="card-by">${esc(t.mentionedBy||'—')}</div>
           <div class="card-cost">RM ${Number(t.totalCost||0).toFixed(2)}/mo</div>
+          ${ts}
         </div>
         <span class="badge ${S_CLASS[s]}" style="flex-shrink:0;">${S_LABEL[s]}</span>
       </div>
@@ -675,148 +717,270 @@ function renderCards(list) {
       </div>
       <div class="card-foot">
         <div style="display:flex;gap:6px;">
-          ${t.driveLink?`<a href="${esc(t.driveLink)}" target="_blank" class="mini-btn mini-lk">📎 Drive</a>`:`<button class="mini-btn mini-lk" onclick="openDrive('${t.id}')">+ Drive</button>`}
+          ${t.driveLink?`<a href="${esc(t.driveLink)}" target="_blank" class="mini-btn mini-lk">📎 Drive</a>`:`<button class="mini-btn mini-lk" onclick="openDrive('${t.fbKey}')">+ Drive</button>`}
         </div>
         <div style="display:flex;gap:5px;">
-          <button class="btn-ghost btn-sm" onclick="openEdit('${t.id}')">Edit</button>
-          <button class="btn-danger btn-sm" onclick="confirmDel('${t.id}')">Del</button>
+          <button class="btn-ghost btn-sm" onclick="openEdit('${t.fbKey}')">Edit</button>
+          <button class="btn-danger btn-sm" onclick="confirmDel('${t.fbKey}')">Del</button>
         </div>
       </div>
     </div>`;
   }).join('');
 }
 
-function apvCell(t,field,status){
-  const val=t[field];const isP=field==='proposed';
-  const canAct=field==='proposed'||(field==='aiApproved'&&t.proposed===true)||(field==='finApproved'&&t.proposed===true&&t.aiApproved===true);
-  if(val===true){
-    const drive=isP?(t.driveLink?`<a href="${esc(t.driveLink)}" target="_blank" class="drive-link">📎 Link</a>`:`<button class="mini-btn mini-lk" onclick="openDrive('${t.id}')">+ Link</button>`):'';
-    return`<div class="apv-cell"><span class="apv-done">✓ Done</span>${drive}</div>`;
+/* ── Approval cells ── */
+function apvCell(t, field, status) {
+  const val=t[field], isP=field==='proposed';
+  const canAct = field==='proposed' || (field==='aiApproved'&&t.proposed===true) || (field==='finApproved'&&t.proposed===true&&t.aiApproved===true);
+  if (val===true) {
+    const drive = isP ? (t.driveLink ? `<a href="${esc(t.driveLink)}" target="_blank" class="drive-link">📎 Link</a>` : `<button class="mini-btn mini-lk" onclick="openDrive('${t.fbKey}')">+ Link</button>`) : '';
+    return `<div class="apv-cell"><span class="apv-done">✓ Done</span>${drive}</div>`;
   }
-  if(val===false){
-    return`<div class="apv-cell"><span class="apv-reject">✗ Rejected</span><button class="mini-btn mini-rs" onclick="setApv('${t.id}','${field}',null)">Reset</button></div>`;
+  if (val===false) {
+    return `<div class="apv-cell"><span class="apv-reject">✗ Rejected</span><button class="mini-btn mini-rs" onclick="setApv('${t.fbKey}','${field}',null)">Reset</button></div>`;
   }
-  if(!canAct) return`<div class="apv-cell"><span class="apv-pending">— Pending</span></div>`;
-  const drive=isP?(t.driveLink?`<a href="${esc(t.driveLink)}" target="_blank" class="drive-link">📎 Link</a>`:`<button class="mini-btn mini-lk" onclick="openDrive('${t.id}')">+ Link</button>`):'';
-  return`<div class="apv-cell"><div class="apv-acts">
-    <button class="mini-btn mini-ap" onclick="setApv('${t.id}','${field}',true)">✓ Approve</button>
-    <button class="mini-btn mini-rj" onclick="setApv('${t.id}','${field}',false)">✗ Reject</button>
+  if (!canAct) return `<div class="apv-cell"><span class="apv-pending">— Pending</span></div>`;
+  const drive = isP ? (t.driveLink ? `<a href="${esc(t.driveLink)}" target="_blank" class="drive-link">📎 Link</a>` : `<button class="mini-btn mini-lk" onclick="openDrive('${t.fbKey}')">+ Link</button>`) : '';
+  return `<div class="apv-cell"><div class="apv-acts">
+    <button class="mini-btn mini-ap" onclick="setApv('${t.fbKey}','${field}',true)">✓ Approve</button>
+    <button class="mini-btn mini-rj" onclick="setApv('${t.fbKey}','${field}',false)">✗ Reject</button>
   </div>${drive}</div>`;
 }
 
-function cardApv(t,field,label,status){
+function cardApv(t, field, label, status) {
   const val=t[field];
-  const canAct=field==='proposed'||(field==='aiApproved'&&t.proposed===true)||(field==='finApproved'&&t.proposed===true&&t.aiApproved===true);
-  if(val===true) return`<span class="apv-done">✓ ${label}</span>`;
-  if(val===false) return`<button class="mini-btn mini-rs" onclick="setApv('${t.id}','${field}',null)">✗ ${label} (Reset)</button>`;
-  if(!canAct) return`<span class="apv-pending">${label}</span>`;
-  return`<button class="mini-btn mini-ap" onclick="setApv('${t.id}','${field}',true)" style="font-size:10px;">${label} ▸</button>`;
+  const canAct = field==='proposed' || (field==='aiApproved'&&t.proposed===true) || (field==='finApproved'&&t.proposed===true&&t.aiApproved===true);
+  if (val===true) return `<span class="apv-done">✓ ${label}</span>`;
+  if (val===false) return `<button class="mini-btn mini-rs" onclick="setApv('${t.fbKey}','${field}',null)">✗ ${label} (Reset)</button>`;
+  if (!canAct) return `<span class="apv-pending">${label}</span>`;
+  return `<button class="mini-btn mini-ap" onclick="setApv('${t.fbKey}','${field}',true)" style="font-size:10px;">${label} ▸</button>`;
 }
 
-function render(){
-  updateDash();
-  let list=tools.filter(t=>currentFilter==='all'||getStatus(t)===currentFilter);
-  if(currentView==='list') renderList(list); else renderCards(list);
+/* ── Approval action → Firebase ── */
+async function setApv(fbKey, field, val) {
+  showToast('Saving…');
+  const patch = { [field]: val, updatedAt: Date.now(), updatedBy: getUser() };
+  await window._fbPatch(fbKey, patch);
+  hideToast();
 }
-
-function setApv(id,field,val){const t=tools.find(x=>x.id===id);if(!t)return;t[field]=val;persist();}
 
 /* ── Filter & View ── */
-function setFilter(f,el){
+function setFilter(f, el) {
   currentFilter=f;
   document.querySelectorAll('.filter-pill').forEach(p=>p.classList.remove('active'));
-  el.classList.add('active'); render();
+  el.classList.add('active'); window._render();
 }
-function setView(v){
+function setView(v) {
   currentView=v;
-  document.getElementById('vbtn-list').classList.toggle('active',v==='list');
-  document.getElementById('vbtn-card').classList.toggle('active',v==='card');
-  document.getElementById('list-view').style.display=v==='list'?'':'none';
-  document.getElementById('card-view').style.display=v==='card'?'':'none';
-  render();
+  document.getElementById('vbtn-list').classList.toggle('active', v==='list');
+  document.getElementById('vbtn-card').classList.toggle('active', v==='card');
+  document.getElementById('list-view').style.display = v==='list' ? '' : 'none';
+  document.getElementById('card-view').style.display = v==='card' ? '' : 'none';
+  window._render();
 }
 
-/* ── Add / Edit ── */
-function openAdd(){editId=null;document.getElementById('modal-title').textContent='Add New A.I. Tool';clearForm();open('add-overlay');}
-function openEdit(id){
-  const t=tools.find(x=>x.id===id);if(!t)return;editId=id;
-  document.getElementById('modal-title').textContent='Edit Tool';
-  document.getElementById('f-name').value=t.name||'';
-  document.getElementById('f-by').value=t.mentionedBy||'';
-  document.getElementById('f-fx').value=t.priceFx||'';
-  document.getElementById('f-ccy').value=t.currency||'USD';
-  document.getElementById('f-rate').value=t.rate||'';
-  document.getElementById('f-rm').value=t.priceRm||'';
-  document.getElementById('f-seats').value=t.seats||'';
-  document.getElementById('f-remarks').value=t.remarks||'';
-  document.getElementById('f-drive').value=t.driveLink||'';
-  calcTotal(); open('add-overlay');
+/* ── Add / Edit modal ── */
+function openAdd() {
+  editFbKey=null;
+  document.getElementById('modal-title').textContent='Add New A.I. Tool';
+  clearForm(); openOverlay('add-overlay');
 }
-function closeAdd(){close('add-overlay');editId=null;}
-function clearForm(){
+function openEdit(fbKey) {
+  const t = window._tools.find(x=>x.fbKey===fbKey); if (!t) return;
+  editFbKey = fbKey;
+  document.getElementById('modal-title').textContent='Edit Tool';
+  document.getElementById('f-name').value   = t.name||'';
+  document.getElementById('f-by').value     = t.mentionedBy||'';
+  document.getElementById('f-fx').value     = t.priceFx||'';
+  document.getElementById('f-ccy').value    = t.currency||'USD';
+  document.getElementById('f-rate').value   = t.rate||'';
+  document.getElementById('f-rm').value     = t.priceRm||'';
+  document.getElementById('f-seats').value  = t.seats||'';
+  document.getElementById('f-remarks').value= t.remarks||'';
+  document.getElementById('f-drive').value  = t.driveLink||'';
+  calcTotal(); openOverlay('add-overlay');
+}
+function closeAdd() { closeOverlay('add-overlay'); editFbKey=null; }
+function clearForm() {
   ['f-name','f-by','f-fx','f-rate','f-rm','f-seats','f-remarks','f-drive'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('f-ccy').value='USD';
   document.getElementById('f-calc').textContent='RM 0.00';
 }
-function calcTotal(){
+function calcTotal() {
   const fx=parseFloat(document.getElementById('f-fx').value)||0;
   const rate=parseFloat(document.getElementById('f-rate').value)||0;
   const seats=parseInt(document.getElementById('f-seats').value)||0;
   let rm=fx*rate;
-  if(rm) document.getElementById('f-rm').value=rm.toFixed(2);
+  if (rm) document.getElementById('f-rm').value=rm.toFixed(2);
   else rm=parseFloat(document.getElementById('f-rm').value)||0;
   const tot=fx&&rate?fx*rate*seats:rm*seats;
   document.getElementById('f-calc').textContent='RM '+tot.toFixed(2);
 }
-function testDrive(){const url=document.getElementById('f-drive').value.trim();if(url)window.open(url,'_blank');}
-function saveTool(){
+function testDrive() { const u=document.getElementById('f-drive').value.trim(); if(u)window.open(u,'_blank'); }
+async function saveTool() {
   const name=document.getElementById('f-name').value.trim();
-  if(!name){alert('Please enter a tool name.');return;}
+  if (!name) { alert('Please enter a tool name.'); return; }
   const fx=parseFloat(document.getElementById('f-fx').value)||0;
   const rate=parseFloat(document.getElementById('f-rate').value)||0;
   const seats=parseInt(document.getElementById('f-seats').value)||0;
   const priceRm=parseFloat(document.getElementById('f-rm').value)||(fx*rate);
   const totalCost=fx&&rate?fx*rate*seats:priceRm*seats;
-  const data={name,mentionedBy:document.getElementById('f-by').value.trim(),priceFx:fx,currency:document.getElementById('f-ccy').value,rate,priceRm,seats,totalCost,remarks:document.getElementById('f-remarks').value.trim(),driveLink:document.getElementById('f-drive').value.trim()};
-  if(editId){
-    const original = tools.find(x=>x.id===editId);
-    Object.assign(original, data);
+  const data = {
+    name, mentionedBy:document.getElementById('f-by').value.trim(),
+    priceFx:fx, currency:document.getElementById('f-ccy').value,
+    rate, priceRm, seats, totalCost,
+    remarks:document.getElementById('f-remarks').value.trim(),
+    driveLink:document.getElementById('f-drive').value.trim(),
+    updatedAt: Date.now(), updatedBy: getUser()
+  };
+  if (editFbKey) {
+    // Preserve approval fields
+    const existing = window._tools.find(x=>x.fbKey===editFbKey);
+    if (existing) {
+      data.proposed   = existing.proposed   ?? null;
+      data.aiApproved = existing.aiApproved ?? null;
+      data.finApproved= existing.finApproved?? null;
+    }
+    data.fbKey = editFbKey;
+  } else {
+    data.proposed=null; data.aiApproved=null; data.finApproved=null;
   }
-  else tools.push({id:uid(),...data,proposed:null,aiApproved:null,finApproved:null});
-  persist();closeAdd();
+  showToast(editFbKey ? 'Updating…' : 'Saving…');
+  await window._fbSave(data);
+  hideToast(); closeAdd();
 }
 
 /* ── Drive quick-edit ── */
-function openDrive(id){driveTarget=id;document.getElementById('drive-url').value=tools.find(x=>x.id===id)?.driveLink||'';open('drive-overlay');}
-function closeDrive(){close('drive-overlay');driveTarget=null;}
-function saveDrive(){if(!driveTarget)return;const t=tools.find(x=>x.id===driveTarget);if(t){t.driveLink=document.getElementById('drive-url').value.trim();persist();}closeDrive();}
+function openDrive(fbKey) {
+  driveTarget=fbKey;
+  document.getElementById('drive-url').value = window._tools.find(x=>x.fbKey===fbKey)?.driveLink||'';
+  openOverlay('drive-overlay');
+}
+function closeDrive() { closeOverlay('drive-overlay'); driveTarget=null; }
+async function saveDrive() {
+  if (!driveTarget) return;
+  showToast('Saving link…');
+  await window._fbPatch(driveTarget, { driveLink: document.getElementById('drive-url').value.trim(), updatedAt: Date.now(), updatedBy: getUser() });
+  hideToast(); closeDrive();
+}
 
 /* ── Delete ── */
-function confirmDel(id){
-  const t=tools.find(x=>x.id===id);
+function confirmDel(fbKey) {
+  const t=window._tools.find(x=>x.fbKey===fbKey);
   document.getElementById('cfm-title').textContent='Delete Tool';
-  document.getElementById('cfm-msg').textContent=`Remove "${t?.name||'this tool'}" from the tracker?`;
-  const btn=document.getElementById('cfm-ok');btn.textContent='Delete';
-  btn.onclick=()=>{tools=tools.filter(x=>x.id!==id);persist();closeConfirm();};
-  open('confirm-overlay');
+  document.getElementById('cfm-msg').textContent=`Remove "${t?.name||'this tool'}" permanently?`;
+  const btn=document.getElementById('cfm-ok');
+  btn.textContent='Delete'; btn.className='btn-danger';
+  btn.onclick=async()=>{ showToast('Deleting…'); await window._fbDelete(fbKey); hideToast(); closeConfirm(); };
+  openOverlay('confirm-overlay');
 }
-function closeConfirm(){close('confirm-overlay');}
+function closeConfirm() { closeOverlay('confirm-overlay'); }
 
 /* ── Overlay helpers ── */
-function open(id){document.getElementById(id).classList.add('open');}
-function close(id){document.getElementById(id).classList.remove('open');}
-['add-overlay','drive-overlay','confirm-overlay'].forEach(id=>{
-  document.getElementById(id).addEventListener('click',function(e){
-    if(e.target===this){if(id==='add-overlay')closeAdd();else if(id==='drive-overlay')closeDrive();else closeConfirm();}
+function openOverlay(id)  { document.getElementById(id).classList.add('open'); }
+function closeOverlay(id) { document.getElementById(id).classList.remove('open'); }
+['add-overlay','drive-overlay','confirm-overlay'].forEach(id => {
+  document.getElementById(id).addEventListener('click', function(e) {
+    if (e.target===this) {
+      if (id==='add-overlay') closeAdd();
+      else if (id==='drive-overlay') closeDrive();
+      else closeConfirm();
+    }
   });
 });
-function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+/* ── Toast ── */
+function showToast(msg='Saving…') {
+  const t=document.getElementById('saving-toast');
+  document.getElementById('toast-msg').textContent=msg;
+  t.classList.add('show');
+}
+function hideToast() {
+  setTimeout(()=>document.getElementById('saving-toast').classList.remove('show'), 600);
+}
+
+/* ── Utilities ── */
+function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function fmt(ts) {
+  if (!ts) return '';
+  const d=new Date(ts);
+  return d.toLocaleDateString('en-GB',{day:'2-digit',month:'short'})+' '+d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
+}
+
+/* ── Lightweight "who edited" — prompt once, store in localStorage ── */
+function getUser() {
+  let u = localStorage.getItem('ccs_username');
+  if (!u) {
+    u = prompt('Enter your name (shown on edits):', '') || 'Anonymous';
+    localStorage.setItem('ccs_username', u);
+  }
+  return u;
+}
+
+/* ── Fallback if Firebase not configured (demo mode with localStorage) ── */
+// After 4 seconds, if Firebase still hasn't connected, fall back to localStorage
+setTimeout(() => {
+  if (!window._fbReady) {
+    console.warn('Firebase not configured — running in local demo mode');
+    const badge = document.getElementById('sync-badge');
+    badge.innerHTML = `<div class="dot" style="background:#f59e0b;"></div>Local Demo (no Firebase)`;
+    badge.style.background = 'rgba(245,158,11,0.12)';
+    badge.style.borderColor = 'rgba(245,158,11,0.35)';
+    badge.style.color = '#b45309';
+
+    // Load from localStorage as fallback
+    const saved = JSON.parse(localStorage.getItem('ccs_tools_fallback') || '[]');
+    window._tools = saved;
+    window._render();
+
+    // Override FB operations to use localStorage
+    window._fbSave = async (tool) => {
+      if (!tool.fbKey) tool.fbKey = Date.now().toString(36)+Math.random().toString(36).slice(2,5);
+      const idx = window._tools.findIndex(x=>x.fbKey===tool.fbKey);
+      if (idx>=0) window._tools[idx] = tool; else window._tools.push(tool);
+      localStorage.setItem('ccs_tools_fallback', JSON.stringify(window._tools));
+      window._render();
+    };
+    window._fbDelete = async (fbKey) => {
+      window._tools = window._tools.filter(x=>x.fbKey!==fbKey);
+      localStorage.setItem('ccs_tools_fallback', JSON.stringify(window._tools));
+      window._render();
+    };
+    window._fbPatch = async (fbKey, patch) => {
+      const t = window._tools.find(x=>x.fbKey===fbKey);
+      if (t) Object.assign(t, patch);
+      localStorage.setItem('ccs_tools_fallback', JSON.stringify(window._tools));
+      window._render();
+    };
+  }
+}, 4000);
 
 /* ── Init ── */
-document.getElementById('footerDate').textContent='Last updated '+new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+document.getElementById('footerDate').textContent =
+  'Last updated '+new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Trigger central network database connection pipeline
-fetchDatabase();
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBFONLIdGhpYffLde77hpWegals4Vu_L94",
+    authDomain: "ai-tool-approval.firebaseapp.com",
+    projectId: "ai-tool-approval",
+    storageBucket: "ai-tool-approval.firebasestorage.app",
+    messagingSenderId: "959848241159",
+    appId: "1:959848241159:web:051d1a3780114c373db2a2",
+    measurementId: "G-44PQT0XL1T"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
 </script>
 </body>
 </html>
