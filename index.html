@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,6 +66,11 @@
     color: #f59e0b;
   }
   .sync-badge.loading .dot { background: #f59e0b; animation: pulse 1s infinite; }
+  .sync-badge.error {
+    background: rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.4);
+    color: #ef4444;
+  }
+  .sync-badge.error .dot { background: #ef4444; }
   .sync-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #10b981; }
 
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
@@ -251,7 +255,6 @@
   }
   .modal-close:hover { background:#e8650a; color:#fff; border-color:#e8650a; }
   .modal-body { padding:20px 22px; }
-  .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
   .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
   .form-group { display:flex; flex-direction:column; gap:5px; }
   .form-group.full { grid-column:1/-1; }
@@ -516,8 +519,8 @@
 /* ══════════════════════════════════
    CLOUD DATA SYNC IMPLEMENTATION
 ══════════════════════════════════ */
-// PASTE YOUR FRESH COPIED DEPLOYMENT URL HERE:
-const DATABASE_URL = "YOUR_NEW_GOOGLE_SCRIPT_WEB_APP_URL_HERE";
+// PASTE YOUR LATEST GOOGLE MACROS WEB APP URL HERE:
+const DATABASE_URL = "YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE";
 
 let tools = [];
 let editId = null, driveTarget = null;
@@ -525,47 +528,65 @@ let currentFilter = 'all', currentView = 'list';
 
 function setSyncBadge(status, text) {
   const badge = document.getElementById('sync-status');
-  badge.className = "sync-badge " + (status === 'loading' ? 'loading' : '');
+  badge.className = "sync-badge " + (status === 'loading' ? 'loading' : (status === 'error' ? 'error' : ''));
   badge.querySelector('span').textContent = text;
 }
 
-// Fetch database rows live from central Google Sheet via CORS-safe endpoint
-async function fetchDatabase() {
+// Fetch database rows cleanly using a dynamic JSONP callback injection script
+function fetchDatabase() {
   setSyncBadge('loading', 'Syncing...');
-  try {
-    // Append a timestamp to break cache loops
-    const res = await fetch(`${DATABASE_URL}?_cb=${Date.now()}`);
-    if (!res.ok) throw new Error('Network response failure');
-    tools = await res.json();
+  
+  const oldScript = document.getElementById('jsonp-read-script');
+  if (oldScript) oldScript.remove();
+
+  const callbackName = 'googleSheetsReadCallback_' + Math.floor(Math.random() * 100000);
+  
+  window[callbackName] = function(data) {
+    tools = data || [];
     setSyncBadge('synced', 'Database Synced');
     render();
-  } catch (err) {
-    console.error('Fetch error:', err);
+    delete window[callbackName];
+    script.remove();
+  };
+
+  const script = document.createElement('script');
+  script.id = 'jsonp-read-script';
+  script.src = `${DATABASE_URL}?action=read&callback=${callbackName}&_cb=${Date.now()}`;
+  script.onerror = function() {
     setSyncBadge('error', 'Sync Failed');
-  }
+  };
+  document.head.appendChild(script);
 }
 
-// Push local state data cleanly inside a form-encoded wrapper
-async function persist() {
+// Push local state metrics upstream via JSONP execution blocks
+function persist() {
   setSyncBadge('loading', 'Saving...');
-  try {
-    // Send data as text/plain via no-cors mode to bypass pre-flight locks
-    await fetch(DATABASE_URL, {
-      method: "POST",
-      mode: "no-cors", 
-      headers: { "Content-Type": "text/plain" },
-      body: JSON.stringify(tools)
-    });
-    
-    setSyncBadge('synced', 'Changes Saved');
-    render();
-    
-    // Smooth delay before polling to let Google's sheet write buffer settle
-    setTimeout(fetchDatabase, 1800);
-  } catch (err) {
-    console.error('Persist error:', err);
-    setSyncBadge('error', 'Save Failed');
-  }
+  
+  const oldScript = document.getElementById('jsonp-save-script');
+  if (oldScript) oldScript.remove();
+
+  const callbackName = 'googleSheetsSaveCallback_' + Math.floor(Math.random() * 100000);
+  
+  window[callbackName] = function(response) {
+    if (response && response.status === 'success') {
+      setSyncBadge('synced', 'Changes Saved');
+      // Trigger background read refresh post-save sequence to verify integrity
+      setTimeout(fetchDatabase, 500);
+    } else {
+      setSyncBadge('error', 'Save Error');
+    }
+    delete window[callbackName];
+    script.remove();
+  };
+
+  const encodedData = encodeURIComponent(JSON.stringify(tools));
+  const script = document.createElement('script');
+  script.id = 'jsonp-save-script';
+  script.src = `${DATABASE_URL}?action=save&data=${encodedData}&callback=${callbackName}`;
+  script.onerror = function() {
+    setSyncBadge('error', 'Network Error');
+  };
+  document.head.appendChild(script);
 }
 
 function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2,5); }
@@ -794,7 +815,7 @@ function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').
 /* ── Init ── */
 document.getElementById('footerDate').textContent='Last updated '+new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
 
-// Call real cloud framework data loader on initialization
+// Trigger central network database connection pipeline
 fetchDatabase();
 </script>
 </body>
